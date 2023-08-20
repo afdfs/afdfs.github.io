@@ -1,0 +1,258 @@
+/* 页脚与头图透明 */
+#footer {
+    background: transparent !important;
+  }
+  #page-header {
+    background: transparent !important;
+  }
+  
+  /* 白天模式遮罩透明 */
+  #footer::before {
+    background: transparent !important;
+  }
+  #page-header::before {
+    background: transparent !important;
+  }
+  
+  /* 夜间模式遮罩透明 */
+  [data-theme="dark"] #footer::before {
+    background: transparent !important;
+  }
+  [data-theme="dark"] #page-header::before {
+    background: transparent !important;
+  }
+  /* 翻页按钮居中 */
+#pagination {
+  width: 100%;
+  margin: auto;
+}
+/*星空特效*/
+/* 背景宇宙星光  */
+#universe{
+  display: block;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */
+  z-index: -1;
+}
+/* 侧边栏个人信息卡片动态渐变色 */
+#aside-content > .card-widget.card-info {
+  background: linear-gradient(
+    -45deg,
+    #e8d8b9,
+    #eccec5,
+    #a3e9eb,
+    #bdbdf0,
+    #eec1ea
+  );
+  box-shadow: 0 0 5px rgb(66, 68, 68);
+  position: relative;
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite !important;
+}
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 黑夜模式适配 */
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background: #191919ee;
+}
+
+/* 个人信息Follow me按钮 */
+#aside-content > .card-widget.card-info > #card-info-btn {
+  background-color: #3eb8be;
+  border-radius: 8px;
+}
+/*首页分类的黑夜配饰*/
+/* 小冰分类分类磁铁黑夜模式适配 */
+/* 一般状态 */
+/* 小冰分类分类磁铁黑夜模式适配 */
+/* 一般状态 */
+[data-theme="dark"] .magnet_link_context {
+  background: #1e1e1e;
+  color: antiquewhite;
+}
+/* 鼠标悬浮状态 */
+[data-theme="dark"] .magnet_link_context:hover {
+  background: #3ecdf1;
+  color: #f2f2f2;
+}
+/*背景卡片图*/
+/* 个人信息卡片背景图 */
+[data-theme="light"] #aside-content > .card-widget.card-info {
+  background-image: url(https://is-ans.oss-cn-qingdao.aliyuncs.com/algorithm/ff9fe15e061395cfb30cb3c7eb8aeef.png);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background-image: url(https://is-ans.oss-cn-qingdao.aliyuncs.com/algorithm/ass.jpg);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
+}
+/* 头像呼吸灯 */
+[data-theme="light"] .avatar-img {
+  animation: huxi_light 4s ease-in-out infinite;
+}
+[data-theme="dark"] .avatar-img {
+  animation: huxi_dark 4s ease-in-out infinite;
+}
+@keyframes huxi_light {
+  0% {
+    box-shadow: 0px 0px 1px 1px #e9f5fa;
+  }
+  50% {
+    box-shadow: 0px 0px 5px 5px #e9f5fa;
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #e9f5fa;
+  }
+}
+@keyframes huxi_dark {
+  0% {
+    box-shadow: 0px 0px 1px 1px #39c5bb;
+  }
+  50% {
+    box-shadow: 0px 0px 5px 5px #39c5bb;
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #39c5bb;
+  }
+}
+/*猫猫特效*/
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+.neko {
+  width: 64px;
+  height: 64px;
+  background-image: url("https://bu.dusays.com/2022/07/20/62d812db74be9.png");
+  position: absolute;
+  right: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(50%);
+  cursor: pointer;
+  font-family: tzy;
+  font-weight: 600;
+  font-size: 16px;
+  color: #6f42c1;
+  display: none;
+}
+
+.neko::after {
+  display: none;
+  width: 100px;
+  height: 100px;
+  background-image: url("https://bu.dusays.com/2022/07/20/62d812d95e6f5.png");
+  background-size: contain;
+  z-index: 9999;
+  position: absolute;
+  right: 50%;
+  text-align: center;
+  line-height: 100px;
+  top: -115%;
+
+}
+
+.neko.showMsg::after {
+  content: attr(data-msg);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.neko:hover::after {
+  content: attr(data-msg);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.neko.fontColor::after {
+  color: #333;
+}
+
+/**
+* @description: 滚动条样式  跟猫二选一
+*/
+@media screen and (max-width:992px) {
+  ::-webkit-scrollbar {
+      width: 8px !important;
+      height: 8px !important
+  }
+
+  ::-webkit-scrollbar-track {
+      border-radius: 2em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background-color: rgb(255 255 255 / .3);
+      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+      border-radius: 2em
+  }
+
+  ::-webkit-scrollbar-corner {
+      background-color: transparent
+  }
+}
+/*导航栏魔改*/
+/* 一级菜单居中 */
+#nav .menus_items {
+  position: absolute !important;
+  width: fit-content !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+/* 子菜单横向展示 */
+#nav .menus_items .menus_item:hover .menus_item_child {
+  display: flex !important;
+}
+/* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
+.menus_items .menus_item:nth-child(5) .menus_item_child {
+  left: -38px;
+}
